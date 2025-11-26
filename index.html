@@ -3,173 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>평화를 위한 발자국 | [프로젝트 제목]</title>
+    <title>평화를 위한 발자국 | 졸업 프로젝트</title>
     <style>
-        /* 폰트 및 기본 스타일 설정 */
+        /* 폰트 및 기본 설정 */
         body {
             font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
             color: #333;
             line-height: 1.6;
+            scroll-behavior: smooth; /* 부드러운 스크롤 */
         }
 
-        /* 헤더 스타일: 프로젝트 이름 */
-        header {
+        /* 헤더/히어로 섹션: 프로젝트 메인 */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero_background.jpg'); /* 배경 이미지 경로 설정 필요 */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+
+        /* 네비게이션 바 */
+        .navbar {
             background-color: #004d40; /* 짙은 녹색 */
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
             color: white;
-            padding: 20px 0;
             text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        /* 네비게이션 메뉴 스타일 */
-        nav {
-            background-color: #00695c; /* 중간 녹색 */
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        nav a {
-            color: white;
+            padding: 14px 20px;
             text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            display: inline-block;
             transition: background-color 0.3s;
         }
 
-        nav a:hover {
+        .navbar a:hover {
             background-color: #00796b; /* 밝은 녹색 */
         }
 
         /* 섹션 공통 스타일 */
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
+        .section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
-        section {
-            padding: 40px 0;
-            margin-bottom: 20px;
-            background: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        section h2 {
+        .section h2 {
             text-align: center;
             color: #004d40;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #004d40;
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-left: 50%;
-            transform: translateX(-50%);
+            font-size: 2em;
+            margin-bottom: 40px;
+            position: relative;
         }
 
-        /* 푸터 스타일 */
-        footer {
-            background-color: #333;
-            color: white;
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #004d40;
+            margin: 10px auto 0;
+        }
+
+        /* 갤러리 그리드 스타일 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             text-align: center;
-            padding: 15px 0;
-            margin-top: 30px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>평화를 위한 발자국: 인터뷰 프로젝트</h1>
-        <p>세상을 바꾸는 사람들의 이야기</p>
-    </header>
-
-    <nav>
-        <a href="#about-me">나의 소개</a>
+    <div class="navbar">
+        <a href="#hero">[프로젝트 제목]</a>
         <a href="#project-intro">프로젝트 소개</a>
         <a href="#process">제작 과정</a>
         <a href="#gallery">사진첩</a>
         <a href="#meaning">프로젝트 의미</a>
-    </nav>
+        <a href="#about-me">나의 소개</a>
+    </div>
 
-    <section id="about-me">
-        <div class="container">
-            <h2>나의 소개</h2>
-            <p><strong>[여기에 본인의 학과, 이름, 그리고 프로젝트를 시작하게 된 개인적인 동기를 작성하세요.]</strong></p>
-            <p>안녕하세요. 저는 OOO대학교 OOO학과에 재학 중인 OOO입니다. 이 프로젝트는 평범한 사람들이 만들어내는 평화의 힘에 감명받아 시작하게 되었습니다. 졸업 프로젝트를 통해 제가 배운 기술과 가치를 사회에 공유하고자 합니다.</p>
-            <p>📧 연락처: your-email@example.com</p>
-        </div>
+    <div class="hero" id="hero">
+        <h1>평화를 위한 발자국</h1>
+        <p>세상을 바꾸는 활동가들의 진솔한 인터뷰 영상 기록</p>
+    </div>
+
+    <section class="section" id="project-intro">
+        <h2>프로젝트 소개 🕊️</h2>
+        <p>본 프로젝트는 평화와 인권을 위해 헌신하는 **세 분의 활동가**를 직접 만나, 그들의 삶과 비전, 그리고 활동 과정을 깊이 있게 영상으로 담아낸 졸업 프로젝트입니다. 단순한 기록을 넘어, 평화가 우리 모두의 일상 속 실천임을 알리고자 합니다.</p>
+        <h3>주요 내용</h3>
+        <ul>
+            <li>**활동가 A:** [분야: 예시) 환경 평화]</li>
+            <li>**활동가 B:** [분야: 예시) 인권 및 교육]</li>
+            <li>**활동가 C:** [분야: 예시) 지역 사회 봉사]</li>
+        </ul>
+        <p style="text-align: center; margin-top: 30px;">**[여기에 완성된 프로젝트 영상의 YouTube 또는 기타 임베드 코드를 삽입하세요.]**</p>
     </section>
     
     <hr>
 
-    <section id="project-intro">
-        <div class="container">
-            <h2>프로젝트 소개</h2>
-            <p><strong>[여기에 프로젝트의 주제, 목표, 그리고 인터뷰의 중요성을 작성하세요.]</strong></p>
-            <p>본 프로젝트는 지역 사회와 더 나아가 세계 평화를 위해 헌신하는 **평화 활동가들을 인터뷰하고 그 과정을 영상 콘텐츠로 제작**하는 것입니다. 우리는 그들의 진솔한 목소리를 담아내어, 평화가 거창한 것이 아니라 우리 일상 속 실천에서 비롯된다는 메시지를 전달하고자 합니다.</p>
-            <h3>핵심 콘텐츠</h3>
-            <ul>
-                <li>활동가 A: [활동 분야]</li>
-                <li>활동가 B: [활동 분야]</li>
-                <li>활동가 C: [활동 분야]</li>
-            </ul>
-        </div>
-    </section>
-
-    <hr>
-    
-    <section id="process">
-        <div class="container">
-            <h2>프로젝트 제작 과정</h2>
-            <p><strong>[여기에 프로젝트의 기획부터 완성까지의 단계를 구체적으로 작성하세요.]</strong></p>
-            <ol>
-                <li>**기획 및 섭외:** 인터뷰 대상 선정 및 질문지 작성 (X월)</li>
-                <li>**현장 촬영:** 활동 현장 및 인터뷰 영상 촬영 (Y월)</li>
-                <li>**영상 편집 및 자막 작업:** 내용 구성 및 최종 영상 제작 (Z월)</li>
-                <li>**홈페이지 제작 및 업로드:** (현재 단계)</li>
-            </ol>
-            <p>각 과정에서 겪었던 어려움과 해결 과정을 간략하게 기록하여 프로젝트의 투명성을 높입니다.</p>
-        </div>
+    <section class="section" id="process">
+        <h2>제작 과정 🎬</h2>
+        <ol>
+            <li>**기획 및 대상 선정 (X월):** 인터뷰 대상자 섭외 및 질문지 구성</li>
+            <li>**현장 인터뷰 및 촬영 (Y월):** 대상자의 활동 현장 방문 및 심층 인터뷰 진행</li>
+            <li>**영상 편집 및 후반 작업 (Z월):** 핵심 메시지를 전달할 수 있도록 영상 구성 및 자막/배경 음악 작업</li>
+            <li>**홈페이지 구현 및 발표:** 최종 결과물 온라인 공개</li>
+        </ol>
+        <p style="margin-top: 20px;">각 단계에서 발생한 어려움(예: 원격 인터뷰 환경 구축)과 이를 극복한 과정을 상세히 기록하여 프로젝트의 가치를 높였습니다.</p>
     </section>
     
     <hr>
 
-    <section id="gallery">
-        <div class="container">
-            <h2>사진첩 (Photos)</h2>
-            <p><strong>[여기에 인터뷰 현장 사진, 비하인드 컷 등을 배치합니다.]</strong></p>
-            <div style="display: flex; justify-content: space-around;">
-                <img src="images/interview_scene1.jpg" alt="인터뷰 현장 1" style="width: 30%; border-radius: 5px;">
-                <img src="images/behind_the_scenes.jpg" alt="비하인드 컷" style="width: 30%; border-radius: 5px;">
-                <img src="images/equipment.jpg" alt="촬영 장비" style="width: 30%; border-radius: 5px;">
-            </div>
-            <p style="text-align: center; margin-top: 15px;">**주의:** `images/` 폴더를 만들어 실제 사진을 넣고 파일 이름을 위 코드와 **동일하게** 맞춰주세요.</p>
-        </div>
-    </section>
-
-    <hr>
-
-    <section id="meaning">
-        <div class="container">
-            <h2>프로젝트의 의미</h2>
-            <p><strong>[여기에 프로젝트를 통해 궁극적으로 달성하고자 하는 목표나, 시청자에게 전달하고 싶은 핵심 메시지를 작성하세요.]</strong></p>
-            <p>이 프로젝트는 단순히 기록을 넘어, 평화 활동가들의 희생과 노력을 조명하여 대중의 **적극적인 참여를 독려**하는 데 의미가 있습니다. 작은 행동이 세상을 어떻게 바꿀 수 있는지 보여주는 교육적인 자료로 활용되기를 기대합니다. </p>
-            <p>평화는 '이미 존재하는 것'이 아니라, '함께 만들어가는 것'임을 깨닫는 계기가 되기를 바랍니다.</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 [본인 이름/팀 이름]. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
+    <section class="section" id="gallery">
+        <h2>사진첩 ✨</h2>
+        <div class="gallery-grid">
+            <img src="images/photo1.jpg" alt="인터뷰 현장 모습">
